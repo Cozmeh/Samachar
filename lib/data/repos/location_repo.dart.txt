@@ -1,0 +1,28 @@
+import 'package:samachar/Data/models/location_model.dart';
+import 'package:samachar/Data/services/location_service.dart';
+
+class LocationRepo {
+  final LocationService _locationService;
+
+  LocationRepo(this._locationService);
+
+  Future<List<Location>> getLocations(String name) async {
+    try {
+      final response = await _locationService.getNews(name: name);
+      if (response.isSuccessful) {
+        final data = response.body;
+        final List<dynamic> jsonList = data['results'];
+        return jsonList.map((e) => Location.fromJson(e)).toList();
+      } else {
+        throw Exception('Failed to fetch locations');
+      }
+    } catch (e) {
+      throw Exception('Failed to fetch locations: $e');
+    }
+  }
+
+  static LocationRepo create() {
+    final locationService = LocationService.create();
+    return LocationRepo(locationService);
+  }
+}
