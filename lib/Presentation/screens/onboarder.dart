@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:geocoding/geocoding.dart';
 // import 'package:geolocator/geolocator.dart';
 import 'package:samachar/Logic/blocs/onboarding/onboarding_bloc.dart';
 import 'package:samachar/Presentation/screens/home.dart';
-import 'package:samachar/Utils/constants.dart';
-import 'package:samachar/Utils/enums.dart';
 
 class OnBoarder extends StatefulWidget {
   const OnBoarder({super.key});

@@ -16,7 +16,7 @@ abstract class WeatherService extends ChopperService {
     final client = ChopperClient(
       baseUrl: Uri.tryParse(Constants.WEATHER_BASE_URL),
       services: [_$WeatherService()],
-      converter: JsonConverter(),
+      converter: const JsonConverter(),
     );
     return _$WeatherService(client);
   }

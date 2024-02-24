@@ -4,7 +4,7 @@ import 'package:samachar/Utils/constants.dart';
 // Light mode colors
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
-  iconTheme: IconThemeData(color: Constants.DARK_BACKGROUND),
+  iconTheme: const IconThemeData(color: Constants.DARK_BACKGROUND),
   colorScheme: ColorScheme.light(
       background: Constants.LIGHT_BACKGROUND,
       primary: Constants.PRIMARY,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:provider/provider.dart';
 import 'package:samachar/Logic/blocs/onboarding/onboarding_bloc.dart';
 import 'package:samachar/Presentation/screens/home.dart';
@@ -25,7 +24,7 @@ class _SettingsState extends State<Settings> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _locationController = TextEditingController();
   final List<String> _selectedCategories = [];
-  bool _isSwitched = false;
+  final bool _isSwitched = false;
 
   // late Position position;
   @override

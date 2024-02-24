@@ -17,7 +17,7 @@ abstract class LocationService extends ChopperService {
     final client = ChopperClient(
       baseUrl: Uri.tryParse(Constants.LOCATION_URL),
       services: [_$LocationService()],
-      converter: JsonConverter(),
+      converter: const JsonConverter(),
     );
     return _$LocationService(client);
   }

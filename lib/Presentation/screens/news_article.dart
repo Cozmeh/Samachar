@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:samachar/Data/database/news_database.dart';
 import 'package:samachar/Data/database/offline_news.dart';
-import 'package:samachar/Data/models/news_model.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class NewsArticle extends StatefulWidget {

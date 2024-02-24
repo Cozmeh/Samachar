@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:samachar/Data/database/offline_news.dart';
 import 'package:samachar/Logic/blocs/offlineNews/offline_news_bloc.dart';
 import 'package:samachar/Presentation/widgets/news_card.dart';
 

@@ -1,4 +1,3 @@
-import 'package:chopper/chopper.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:samachar/Data/database/offline_news.dart';

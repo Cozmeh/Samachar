@@ -10,7 +10,6 @@ import 'package:samachar/Presentation/screens/category_feed.dart';
 import 'package:samachar/Presentation/screens/downloads.dart';
 import 'package:samachar/Presentation/screens/main_feed.dart';
 import 'package:samachar/Presentation/screens/settings.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

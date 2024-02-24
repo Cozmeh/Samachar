@@ -9,11 +9,9 @@ import 'package:samachar/Logic/blocs/offlineNews/offline_news_bloc.dart';
 import 'package:samachar/Logic/blocs/onboarding/onboarding_bloc.dart';
 import 'package:samachar/Logic/blocs/weather/weather_bloc.dart';
 import 'package:samachar/Presentation/screens/home.dart';
-import 'package:samachar/Presentation/screens/main_feed.dart';
 import 'package:samachar/Presentation/screens/onboarder.dart';
 import 'package:samachar/Presentation/themes/theme_provider.dart';
 import 'package:samachar/Presentation/themes/themes.dart';
-import 'package:samachar/Utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {

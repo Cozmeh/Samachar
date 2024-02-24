@@ -22,7 +22,7 @@ abstract class NewsService extends ChopperService {
     final client = ChopperClient(
       baseUrl: Uri.tryParse(Constants.BASE_URL),
       services: [_$NewsService()],
-      converter: JsonConverter(),
+      converter: const JsonConverter(),
     );
     return _$NewsService(client);
   }

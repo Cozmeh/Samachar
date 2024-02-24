@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:samachar/Data/models/news_model.dart';
 import 'package:samachar/Logic/blocs/news/news_bloc.dart';
 import 'package:samachar/Presentation/widgets/news_card.dart';
-import 'package:samachar/utils/enums.dart';
 
 class CategoryFeed extends StatefulWidget {
   List<String>? selectedCategories;
