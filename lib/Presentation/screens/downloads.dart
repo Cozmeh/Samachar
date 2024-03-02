@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:samachar/Logic/blocs/offlineNews/offline_news_bloc.dart';
@@ -30,17 +31,23 @@ class _DownloadsState extends State<Downloads> {
         if (state is OfflineNewsLoaded) {
           if (state.news.isEmpty) {
             return const Center(
-              child: Text('No articles saved'),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.insert_drive_file_outlined,
+                    size: 40,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text("Nothing here . . .")
+                ],
+              ),
             );
           } else {
             return Column(
               children: [
-                ElevatedButton(
-                    onPressed: () {
-                      BlocProvider.of<OfflineNewsBloc>(context)
-                          .add(DeleteAllOfflineNews());
-                    },
-                    child: const Text("Delete All")),
                 Expanded(
                   child: ListView.builder(
                       shrinkWrap: true,
@@ -59,6 +66,27 @@ class _DownloadsState extends State<Downloads> {
                         );
                       }),
                 ),
+                ElevatedButton(
+                    style: const ButtonStyle(
+                        foregroundColor: MaterialStatePropertyAll(Colors.red)),
+                    onPressed: () {
+                      var exitBar = SnackBar(
+                        backgroundColor: Colors.redAccent,
+                        content: const Text(
+                          "Do you want to Clear downloads ?",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        action: SnackBarAction(
+                            label: "Yes",
+                            textColor: Colors.black,
+                            onPressed: () {
+                              BlocProvider.of<OfflineNewsBloc>(context)
+                                  .add(DeleteAllOfflineNews());
+                            }),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(exitBar);
+                    },
+                    child: const Text("Clear Downloads")),
               ],
             );
           }
