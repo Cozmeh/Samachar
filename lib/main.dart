@@ -23,9 +23,7 @@ void main() async {
   if (firstTime) {
     await prefs.setBool('first', false);
   }
-  runApp(ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-      child: Newsapp(firstTime: firstTime)));
+  runApp(Newsapp(firstTime: firstTime));
 }
 
 class Newsapp extends StatefulWidget {
@@ -54,12 +52,17 @@ class _NewsappState extends State<Newsapp> {
             create: (context) => OfflineNewsBloc(NewsDatabase()),
           )
         ],
-        child: MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: lightMode, /*Provider.of<ThemeProvider>(context).themeData*/
-            darkTheme: darkMode,
-            themeMode: ThemeMode.system,
-            home: widget.firstTime ? const OnBoarder() : const Home()));
+        child: ChangeNotifierProvider(
+          create: (context) => ThemeProvider(),
+          child: Builder(builder: (context) {
+            return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: Provider.of<ThemeProvider>(context).themeData,
+                //darkTheme: darkMode,
+                themeMode: ThemeMode.system,
+                home: widget.firstTime ? const OnBoarder() : const Home());
+          }),
+        ));
   }
 
   // callnews() async {

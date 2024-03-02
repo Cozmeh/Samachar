@@ -24,7 +24,7 @@ class _SettingsState extends State<Settings> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _locationController = TextEditingController();
   final List<String> _selectedCategories = [];
-  final bool _isSwitched = false;
+  bool _isDarkMode = true;
 
   // late Position position;
   @override
@@ -87,7 +87,7 @@ class _SettingsState extends State<Settings> {
         if (state is OnboardingError) {
           return Text(state.message);
         }
-        return const Text('Could not load categories :(');
+        return const SizedBox();
       },
     );
   }
@@ -115,10 +115,15 @@ class _SettingsState extends State<Settings> {
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     IconButton(
-                        icon: const Icon(Icons.light_mode),
+                        icon: _isDarkMode
+                            ? const Icon(Icons.light_mode)
+                            : const Icon(Icons.dark_mode),
                         onPressed: () {
-                          Provider.of<ThemeProvider>(context, listen: false)
-                              .toggleTheme();
+                          setState(() {
+                            _isDarkMode = Provider.of<ThemeProvider>(context,
+                                    listen: false)
+                                .toggleTheme();
+                          });
                         })
                   ],
                 ),
