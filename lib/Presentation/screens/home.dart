@@ -181,26 +181,30 @@ class _HomeState extends State<Home> {
                         ),
                       );
                     }
-                    return const Text(':(');
+                    return const SizedBox();
                   },
                 ),
               ],
             ),
             bottomNavigationBar: NavigationBar(
+              indicatorColor: Theme.of(context).colorScheme.secondary,
               backgroundColor: Theme.of(context).colorScheme.surface,
               labelBehavior:
                   NavigationDestinationLabelBehavior.onlyShowSelected,
               surfaceTintColor: Theme.of(context).colorScheme.background,
               destinations: const [
                 NavigationDestination(
+                  tooltip: "Main Feed",
                   icon: Icon(Icons.newspaper),
                   label: 'News',
                 ),
                 NavigationDestination(
+                  tooltip: "Selected Categories",
                   icon: Icon(Icons.category),
-                  label: 'Category',
+                  label: 'Following',
                 ),
                 NavigationDestination(
+                  tooltip: "Saved Articles",
                   icon: Icon(Icons.bookmarks),
                   label: 'Downloads',
                 ),
@@ -290,6 +294,7 @@ class _HomeState extends State<Home> {
       height: 100,
       child: Card(
         color: Theme.of(context).colorScheme.surface,
+        surfaceTintColor: Theme.of(context).colorScheme.background,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
           child: Column(

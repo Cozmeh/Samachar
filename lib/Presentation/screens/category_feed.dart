@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:samachar/Logic/blocs/news/news_bloc.dart';
@@ -43,6 +44,8 @@ class _CategoryFeedState extends State<CategoryFeed>
         body: Column(
           children: [
             TabBar(
+                unselectedLabelStyle: const  TextStyle(fontWeight: FontWeight.normal),
+                labelStyle: const TextStyle(fontWeight: FontWeight.bold),
                 controller: _tabController,
                 isScrollable: true,
                 tabAlignment: TabAlignment.center,

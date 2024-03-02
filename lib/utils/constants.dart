@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-
   static const String COUNTRY = "in";
 
   static const String BASE_URL = "https://newsapi.org/v2";
@@ -14,10 +13,9 @@ class Constants {
   // for location
   static const String LOCATION_URL = "https://geocoding-api.open-meteo.com/v1";
 
-
   // main colors
-  static const Color PRIMARY = Colors.greenAccent;
-  static Color SECONDARY = Colors.green.shade100;
+  static Color PRIMARY = Colors.green.shade400;
+  static Color SECONDARY = Colors.green.shade200;
   static Color LIGHT_BACKGROUND = Colors.grey.shade300;
   static const Color DARK_BACKGROUND = Color.fromARGB(255, 22, 22, 22);
   // color for cards , nav bar and other surfaces
