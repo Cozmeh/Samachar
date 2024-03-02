@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
       });
     } else {
       setState(() {
-        currentindex = 0;
+        currentindex = 1;
       });
     }
   }
