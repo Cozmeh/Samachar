@@ -72,7 +72,27 @@ class _NewsArticleState extends State<NewsArticle> {
     );
   }
 
-  // dateIdentifier(String date) {}
+  String getDateTime(String datetime) {
+    // 01234567890123456789
+    // 2024-03-01T08:28:56Z
+    // print("datetime test : $datetime");
+    Map monthMap = {
+      '01': 'Jan',
+      '02': 'Feb',
+      '03': 'Mar',
+      '04': 'Apr',
+      '05': 'May',
+      '06': 'Jun',
+      '07': 'Jul',
+      '08': 'Aug',
+      '09': 'Sep',
+      '10': 'Oct',
+      '11': 'Nov',
+      '12': 'Dec',
+    };
+
+    return "Published on : ${datetime.substring(8, 10)}, ${monthMap[datetime.substring(5, 7)]}, ${datetime.substring(0, 4)} - ${datetime.substring(11, 16)}";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +123,7 @@ class _NewsArticleState extends State<NewsArticle> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Published on : ( ${widget.publishedAt.substring(0, 10)} ) - ${widget.publishedAt.substring(11, 16)}",
+                    getDateTime(widget.publishedAt),
                     style: const TextStyle(fontWeight: FontWeight.w300),
                   ),
                 ],
