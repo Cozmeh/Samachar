@@ -50,9 +50,7 @@ class _NewsFeedState extends State<NewsFeed> {
                 "There was an error loading the news. Please try again.\n\nPossible reasons:\nNo internet connection, server error, etc."),
           );
         } else {
-          return const Center(
-            child: Text('Could not load news :('),
-          );
+          return const SizedBox();
         }
       },
     );

@@ -36,7 +36,7 @@ class _CategoryFeedState extends State<CategoryFeed>
 
   @override
   Widget build(BuildContext context) {
-    print("Selected Categories: ${widget.selectedCategories}");
+    // print("Selected Categories: ${widget.selectedCategories}");
     return DefaultTabController(
       length: widget.selectedCategories!.length,
       child: Scaffold(
@@ -97,9 +97,7 @@ class _CategoryFeedState extends State<CategoryFeed>
                 "There was an error loading the news. Please try again.\n\nPossible reasons:\nNo internet connection, server error, etc."),
           );
         } else {
-          return const Center(
-            child: Text("Could not load news :("),
-          );
+          return SizedBox();
         }
       },
     );
