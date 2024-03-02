@@ -195,10 +195,18 @@ class _SettingsState extends State<Settings> {
         ),
       );
     } else {
-      BlocProvider.of<OnboardingBloc>(context).add(Dataloaded(
-          name: _nameController.text,
-          location: _locationController.text,
-          selectedCategories: _selectedCategories));
+      if (RegExp(r"^[A-Za-z]+$").hasMatch(_nameController.text.toString())) {
+        BlocProvider.of<OnboardingBloc>(context).add(Dataloaded(
+            name: _nameController.text,
+            location: _locationController.text,
+            selectedCategories: _selectedCategories));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Please make sure it alphabet only'),
+          ),
+        );
+      }
     }
   }
 }

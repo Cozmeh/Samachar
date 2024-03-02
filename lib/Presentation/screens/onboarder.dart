@@ -187,23 +187,33 @@ class _OnBoarderState extends State<OnBoarder> {
           content: Text('Please enter your name'),
         ),
       );
-    } else if (_locationController.text.isEmpty) {
+    } 
+    else if (_locationController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Please enter your location'),
         ),
       );
-    } else if (_selectedCategories.isEmpty) {
+    } 
+    else if (_selectedCategories.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Please select at least one category'),
         ),
       );
     } else {
-      BlocProvider.of<OnboardingBloc>(context).add(Dataloaded(
-          name: _nameController.text,
-          location: _locationController.text,
-          selectedCategories: _selectedCategories));
+      if (RegExp(r"^[A-Za-z]+$").hasMatch(_nameController.text.toString())) {
+        BlocProvider.of<OnboardingBloc>(context).add(Dataloaded(
+            name: _nameController.text,
+            location: _locationController.text,
+            selectedCategories: _selectedCategories));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Please make sure it alphabet only'),
+          ),
+        );
+      }
     }
   }
 }
