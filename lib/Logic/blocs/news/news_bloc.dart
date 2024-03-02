@@ -15,7 +15,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
   }
 
   void _onLoadNews(LoadNews event, Emitter<NewsState> emit) async {
-    //emit(NewsLoading());
+    emit(NewsLoading());
     try {
       final newsList = await newsRepository.getNews();
       print(newsList.length);
@@ -27,7 +27,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
 
   void _onLoadCategoricalNews(
       LoadCategoricalNews event, Emitter<NewsState> emit) async {
-    //emit(NewsLoading());
+    emit(NewsLoading());
     try {
       final newsList = await newsRepository.getCategoryNews(event.category);
       emit(CategoriesLoaded(newsList));

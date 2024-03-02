@@ -87,7 +87,7 @@ class _NewsCardState extends State<NewsCard> {
                           // delete the news from the database
                           BlocProvider.of<OfflineNewsBloc>(context)
                               .add(DeleteOfflineNews(widget.id));
-                          print("Deleted : ${widget.title}");
+                          // print("Deleted : ${widget.title}");
                         },
                         icon: const Icon(Icons.delete),
                       )

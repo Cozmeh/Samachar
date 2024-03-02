@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:samachar/Data/database/news_database.dart';
-import 'package:samachar/Data/database/offline_news.dart';
+import 'package:samachar/data/database/news_database.dart';
+import 'package:samachar/data/database/offline_news.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:intl/intl.dart';
 
 class NewsArticle extends StatefulWidget {
   final String title;
@@ -28,6 +29,9 @@ class NewsArticle extends StatefulWidget {
 
 class _NewsArticleState extends State<NewsArticle> {
   final NewsDatabase newsDatabase = NewsDatabase();
+
+  // DateTime dateTime;
+
   // function to launch the URL
   _launchURL() async {
     await launchUrlString(widget.url);
@@ -67,6 +71,8 @@ class _NewsArticleState extends State<NewsArticle> {
       height: 20,
     );
   }
+
+  // dateIdentifier(String date) {}
 
   @override
   Widget build(BuildContext context) {
