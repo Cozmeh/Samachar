@@ -66,15 +66,24 @@ class _NewsCardState extends State<NewsCard> {
                     if (loadingProgress == null) {
                       return child;
                     }
-                    return const Center(child: Text("Loading.."));
+                    return const Center(
+                        child: Icon(Icons.hourglass_empty_rounded));
                   },
                   // if the image fails to load, show a newspaper icon
                   errorBuilder: (BuildContext context, Object exception,
                       StackTrace? stackTrace) {
-                    return const Center(
-                      child: Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Icon(Icons.newspaper)),
+                    return Center(
+                      child: Container(
+                        height: MediaQuery.sizeOf(context).width * 0.5,
+                        width: MediaQuery.sizeOf(context).width,
+                        color: Theme.of(context).colorScheme.secondary,
+                        child: const Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Icon(
+                              Icons.newspaper,
+                              size: 100,
+                            )),
+                      ),
                     );
                   },
                 ),
