@@ -24,7 +24,8 @@ final class _$LocationService extends LocationService {
     String language = "en",
     String format = "json",
   }) {
-    final Uri $url = Uri.parse('/search');
+    final Uri $url =
+        Uri.parse('https://geocoding-api.open-meteo.com/v1/search');
     final Map<String, dynamic> $params = <String, dynamic>{
       'name': name,
       'count': count,

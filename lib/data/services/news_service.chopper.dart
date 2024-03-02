@@ -20,9 +20,9 @@ final class _$NewsService extends NewsService {
   @override
   Future<Response<dynamic>> getNews({
     String country = Constants.COUNTRY,
-    String apiKey = Constants.NEWS_API_KEY,
+    String apiKey = Keys.NEWS_API_KEY,
   }) {
-    final Uri $url = Uri.parse('/top-headlines');
+    final Uri $url = Uri.parse('https://newsapi.org/v2/top-headlines');
     final Map<String, dynamic> $params = <String, dynamic>{
       'country': country,
       'apiKey': apiKey,
@@ -38,11 +38,11 @@ final class _$NewsService extends NewsService {
 
   @override
   Future<Response<dynamic>> getCategoryNews({
-    String apiKey = Constants.NEWS_API_KEY,
+    String apiKey = Keys.NEWS_API_KEY,
     String country = Constants.COUNTRY,
     String? category,
   }) {
-    final Uri $url = Uri.parse('/top-headlines');
+    final Uri $url = Uri.parse('https://newsapi.org/v2/top-headlines');
     final Map<String, dynamic> $params = <String, dynamic>{
       'apiKey': apiKey,
       'country': country,

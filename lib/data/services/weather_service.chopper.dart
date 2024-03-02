@@ -23,7 +23,7 @@ final class _$WeatherService extends WeatherService {
     required double longitude,
     String current = "temperature_2m,cloud_cover,apparent_temperature",
   }) {
-    final Uri $url = Uri.parse('/forecast');
+    final Uri $url = Uri.parse('https://api.open-meteo.com/v1/forecast');
     final Map<String, dynamic> $params = <String, dynamic>{
       'latitude': latitude,
       'longitude': longitude,

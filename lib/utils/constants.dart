@@ -6,9 +6,6 @@ class Constants {
 
   static const String COUNTRY = "in";
 
-  // developer account api is limited to 100 requests per 24 hours
-  static const String NEWS_API_KEY = /*"cd821e87e51247a5ac5ef1789d8d7147"*/  // main account
-      "bca13cbb53e24308b51ff62e65783184"; // secondary account
   static const String BASE_URL = "https://newsapi.org/v2";
 
   // causing error
