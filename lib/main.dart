@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:samachar/Data/database/news_database.dart';
+import 'package:samachar/data/database/news_database.dart';
 import 'package:samachar/Data/repos/news_repo.dart';
 import 'package:samachar/Data/repos/weather_repo.dart';
 import 'package:samachar/Logic/blocs/news/news_bloc.dart';
@@ -56,7 +56,7 @@ class _NewsappState extends State<Newsapp> {
         ],
         child: MaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: lightMode /*Provider.of<ThemeProvider>(context).themeData*/,
+            theme: lightMode, /*Provider.of<ThemeProvider>(context).themeData*/
             darkTheme: darkMode,
             themeMode: ThemeMode.system,
             home: widget.firstTime ? const OnBoarder() : const Home()));

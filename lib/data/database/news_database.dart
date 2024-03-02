@@ -1,6 +1,6 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:samachar/Data/database/offline_news.dart';
+import 'package:samachar/data/database/offline_news.dart';
 
 class NewsDatabase {
   static late Isar isar;
@@ -28,5 +28,9 @@ class NewsDatabase {
 
   Future<void> deleteOfflineNews(int id) async {
     await isar.writeTxn(() => isar.offlineNews.delete(id));
+  }
+
+  Future<void> deleteAllOfflineNews() async {
+    await isar.writeTxn(() => isar.offlineNews.clear());
   }
 }

@@ -16,3 +16,5 @@ final class DeleteOfflineNews extends OfflineNewsEvent {
   @override
   List<Object> get props => [id];
 }
+
+final class DeleteAllOfflineNews extends OfflineNewsEvent{}
