@@ -19,12 +19,14 @@ class _CategoryFeedState extends State<CategoryFeed>
   @override
   void initState() {
     // BlocProvider.of<NewsBloc>(context).add(LoadCategoricalNews());
+    super.initState();
+    // BlocProvider.of<NewsBloc>(context)
+    //     .add(LoadCategoricalNews(widget.selectedCategories!.elementAt(0)));
     _tabController = TabController(
       length: widget.selectedCategories!.length,
       vsync: this,
     );
     _tabController.addListener(_handleTabChange);
-    super.initState();
   }
 
   void _handleTabChange() {
@@ -44,7 +46,8 @@ class _CategoryFeedState extends State<CategoryFeed>
         body: Column(
           children: [
             TabBar(
-                unselectedLabelStyle: const  TextStyle(fontWeight: FontWeight.normal),
+                unselectedLabelStyle:
+                    const TextStyle(fontWeight: FontWeight.normal),
                 labelStyle: const TextStyle(fontWeight: FontWeight.bold),
                 controller: _tabController,
                 isScrollable: true,
